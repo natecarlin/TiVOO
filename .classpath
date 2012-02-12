@@ -3,6 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="gagawa-1.0.1.jar"/>
-	<classpathentry kind="lib" path="G:/Duke/Courses/CS108/TiVOO/Libraries/joda-time-2.0-dist/joda-time-2.0/joda-time-2.0.jar"/>
+	<classpathentry kind="lib" path="joda-time-2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
