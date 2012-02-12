@@ -24,7 +24,7 @@ public class htmlOutput {
         Html html = new Html();
         Body body = new Body();
         
-        Text eventText = new Text("Name of Event:" + e.name + "\n" + "Start Time:" e.startTime + "\n" + "End Time:" + e.endTime + "\n" + "Location:" + e.location + "\n" + "Description:" + e.description);
+        Text eventText = new Text("Name of Event:" + e.myName + "\n" + "Location:" + e.myLocation + "\n" + "Description:" + e.myDescription);
         body.appendChild(eventText);
         html.appendChild(body);
         return html.write();
