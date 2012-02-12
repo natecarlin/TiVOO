@@ -17,7 +17,7 @@ import com.hp.gagawa.java.elements.Text;
  */
 public class htmlOutput {
     
-    public File makeOutput(ArrayList<Event> processedEvents) throws IOException {
+    public static File makeOutput(ArrayList<Event> processedEvents) throws IOException {
         //Create file for writing
         String fileName = System.getProperty("user.home") + "/Desktop/TiVOOoutput.html";
         File out = new File(fileName);
@@ -46,7 +46,7 @@ public class htmlOutput {
         return out;
     }
     
-    public Text outputEvent(Event e) {
+    public static Text outputEvent(Event e) {
         //creates Text out of e
         Text eventText = new Text("Name of Event: " + e.myName + " Location: " + e.myLocation + " Description: " + e.myDescription + "<br>");
         return eventText;
@@ -55,10 +55,9 @@ public class htmlOutput {
     }
     
     public static void main(String[] args) throws IOException {
-        htmlOutput ho = new htmlOutput();
         ArrayList<Event> allEvents = new ArrayList<Event>();
         allEvents.add(new Event("Madonna", "Cat's Cradle", "Her Big Summer Show", 021312, 021312));
         allEvents.add(new Event("Weezer", "Griffith", "blah blah blah...", 041412, 041412));
-        ho.makeOutput(allEvents);
+        makeOutput(allEvents);
     }
 }
