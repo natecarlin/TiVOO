@@ -14,4 +14,8 @@ public class Event {
         myEndTime = endTime;
     }
     
+    public String toString(){
+    	return "Event[" + myName + ", " + myLocation + ", " + myDescription + "]\n";
+    }
+    
 }
