@@ -8,9 +8,14 @@ import com.hp.gagawa.java.elements.Body;
 import com.hp.gagawa.java.elements.Html;
 import com.hp.gagawa.java.elements.Text;
 
-
+/**
+ * @author antaresyee
+ * 
+ * README: Pass makeOutput() an ArrayList<Event> to create a .html file.  The file will be located on 
+ * your desktop (I think it works on all systems, but I only tested it on mac. Change the filename's 
+ * path if its not working for you.)
+ */
 public class htmlOutput {
-    //input is list of events.
     
     public File makeOutput(ArrayList<Event> processedEvents) throws IOException {
         //Create file for writing
