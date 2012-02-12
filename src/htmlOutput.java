@@ -1,4 +1,7 @@
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.hp.gagawa.java.elements.Body;
@@ -9,27 +12,48 @@ import com.hp.gagawa.java.elements.Text;
 public class htmlOutput {
     //input is list of events.
     
-    public File makeOutput(ArrayList<Event> processedEvents) {
-        File out = new File("~/Desktop/TiVOOoutput.html");
+    public File makeOutput(ArrayList<Event> processedEvents) throws IOException {
+        //Create file for writing
+        String fileName = System.getProperty("user.home") + "/Desktop/TiVOOoutput.html";
+        File out = new File(fileName);
+        boolean exist = out.createNewFile();
         
-        for (Event e : processedEvents) {
-            //TODO: take string from outputEvent(e), write it to File out.
-            outputEvent(e);
+        if (!exist) {
+        System.out.println("File already exists.");
+        System.exit(0);
         }
-        return out;
-    }
-    
-    public String outputEvent(Event e) {
-        //creates string of html
+        
+        //set up FileWriter and BufferedWriter
+        FileWriter fw = new FileWriter(out);
+        BufferedWriter bw = new BufferedWriter(fw);
+        
+        //setup HTML tag
         Html html = new Html();
         Body body = new Body();
         
-        Text eventText = new Text("Name of Event:" + e.myName + "\n" + "Location:" + e.myLocation + "\n" + "Description:" + e.myDescription);
-        body.appendChild(eventText);
+        //write each event to file.
+        for (Event e : processedEvents) {
+            body.appendChild(outputEvent(e));
+        }
         html.appendChild(body);
-        return html.write();
+        bw.write(html.write());
+        bw.close();
+        return out;
+    }
+    
+    public Text outputEvent(Event e) {
+        //creates Text out of e
+        Text eventText = new Text("Name of Event: " + e.myName + " Location: " + e.myLocation + " Description: " + e.myDescription + "<br>");
+        return eventText;
        
         
     }
     
+    public static void main(String[] args) throws IOException {
+        htmlOutput ho = new htmlOutput();
+        ArrayList<Event> allEvents = new ArrayList<Event>();
+        allEvents.add(new Event("Madonna", "Cat's Cradle", "Her Big Summer Show", 021312, 021312));
+        allEvents.add(new Event("Weezer", "Griffith", "blah blah blah...", 041412, 041412));
+        ho.makeOutput(allEvents);
+    }
 }
