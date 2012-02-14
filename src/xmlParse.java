@@ -38,6 +38,10 @@ public class xmlParse {
 		return toReturnEvents;
 	}
 
+	/*
+	 * create Joda Time from a specific period (a subnode of an event like 'start' or 'end')
+	 * in an event
+	 */
 	private static DateTime createTime(Node nEvent, String period) throws IOException {
 		NodeList children = nEvent.getChildNodes();
 		Node myTime = null;
@@ -53,7 +57,11 @@ public class xmlParse {
 		DateTime dt =new DateTime(getIntOfTime(myTime, "hour"), getIntOfTime(myTime, "month"),getIntOfTime(myTime, "day"),getIntOfTime(myTime, "hour24"),getIntOfTime(myTime, "minute"),0,0);
 	   return dt;
 	}
-
+	
+	
+	/*
+	 * return an integer of specific time scale
+	 */
 	private static int getIntOfTime(Node myTime, String scale) {
 		return Integer.parseInt(extractNodeText(myTime, scale));
 	}
