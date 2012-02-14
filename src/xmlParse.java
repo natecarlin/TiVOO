@@ -58,7 +58,6 @@ public class xmlParse {
 	   return dt;
 	}
 	
-	
 	/*
 	 * return an integer of specific time scale
 	 */
