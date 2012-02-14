@@ -27,8 +27,8 @@ public class xmlProcess {
 	public static void main (String[] args){
 		
 		ArrayList<Event> test =new ArrayList<Event>();
-		test.add(new Event("meet with TA", "bbb", "cd", 8, 10));
-		test.add(new Event("talk with TA", "bbb", "cd", 8, 10));
+		test.add(new Event("meet with TA", "bbb", "cd", "8", "10"));
+		test.add(new Event("talk with TA", "bbb", "cd", "8", "10"));
 		test=new xmlProcess().process(test);
 		
 		for(Event m: test){

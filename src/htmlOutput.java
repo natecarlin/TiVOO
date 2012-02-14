@@ -56,8 +56,8 @@ public class htmlOutput {
     
     public static void main(String[] args) throws IOException {
         ArrayList<Event> allEvents = new ArrayList<Event>();
-        allEvents.add(new Event("Madonna", "Cat's Cradle", "Her Big Summer Show", 021312, 021312));
-        allEvents.add(new Event("Weezer", "Griffith", "blah blah blah...", 041412, 041412));
+        allEvents.add(new Event("Madonna", "Cat's Cradle", "Her Big Summer Show", "021312", "021312"));
+        allEvents.add(new Event("Weezer", "Griffith", "blah blah blah...", "041412", "041412"));
         makeOutput(allEvents);
     }
 }

@@ -3,10 +3,10 @@ public class Event {
     public String myName;
     public String myLocation;
     public String myDescription;
-    public int myStartTime;
-    public int myEndTime;
+    public String myStartTime;
+    public String myEndTime;
     
-    public Event(String name, String location, String description, int startTime, int endTime) {
+    public Event(String name, String location, String description, String startTime, String endTime) {
         myName = name;
         myLocation = location;
         myDescription = description;
